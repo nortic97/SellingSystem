@@ -303,7 +303,9 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
 
         btn_update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_norm.png"))); // NOI18N
         btn_update.setBorder(null);
-        btn_update.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_press.png"))); // NOI18N
+        btn_update.setBorderPainted(false);
+        btn_update.setContentAreaFilled(false);
+        btn_update.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_update.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

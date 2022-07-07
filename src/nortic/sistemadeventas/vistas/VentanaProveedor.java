@@ -283,6 +283,7 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
         btn_update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_norm.png"))); // NOI18N
         btn_update.setBorder(null);
         btn_update.setBorderPainted(false);
+        btn_update.setContentAreaFilled(false);
         btn_update.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_update.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_update.addActionListener(new java.awt.event.ActionListener() {
@@ -355,9 +356,8 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_guardar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_eliminar)
-                        .addComponent(btn_update))
+                    .addComponent(btn_eliminar)
+                    .addComponent(btn_update)
                     .addComponent(btn_nuevo)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
