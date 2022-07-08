@@ -65,6 +65,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Modulo Vendedor");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/empleado24px.png"))); // NOI18N
 
         jLabel1.setForeground(new java.awt.Color(236, 243, 158));
@@ -136,6 +137,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         btn_limpiar.setBorder(null);
         btn_limpiar.setBorderPainted(false);
         btn_limpiar.setContentAreaFilled(false);
+        btn_limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_limpiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_press.png"))); // NOI18N
         btn_limpiar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_roll.png"))); // NOI18N
         btn_limpiar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_roll.png"))); // NOI18N
@@ -149,6 +151,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         btn_eliminar.setBorder(null);
         btn_eliminar.setBorderPainted(false);
         btn_eliminar.setContentAreaFilled(false);
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_eliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_press.png"))); // NOI18N
         btn_eliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_roll.png"))); // NOI18N
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +164,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         btn_actualizar.setBorder(null);
         btn_actualizar.setBorderPainted(false);
         btn_actualizar.setContentAreaFilled(false);
+        btn_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_actualizar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_actualizar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +177,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         btn_guardar.setBorder(null);
         btn_guardar.setBorderPainted(false);
         btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_press.png"))); // NOI18N
         btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_roll.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -382,11 +387,11 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -553,6 +558,8 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
         nuevo();
+        Limpiar();
+        ListarVendedor();
 
         if (!btn_guardar.isEnabled()) {
 
@@ -639,6 +646,7 @@ public class VentanaVendedor extends javax.swing.JInternalFrame {
         txt_telefono.setText("");
         txt_contraseña.setText("");
         combo_rol.setSelectedIndex(0);
+        txt_buscar.setText("");
 
     }
 

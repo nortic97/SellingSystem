@@ -41,6 +41,8 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
     VentanaProducto(String rol, String n) {
         initComponents();
         ListarProducto();
+        btn_eliminar.setEnabled(false);
+        btn_update.setEnabled(false);
         String nombre_vendedor = n;
         l.setNombre(nombre_vendedor);
         prodao.combo(combo_proveedor);
@@ -249,7 +251,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -293,6 +295,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         btn_guardar.setBorder(null);
         btn_guardar.setBorderPainted(false);
         btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_press.png"))); // NOI18N
         btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_roll.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -305,6 +308,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         btn_update.setBorder(null);
         btn_update.setBorderPainted(false);
         btn_update.setContentAreaFilled(false);
+        btn_update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_update.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_update.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_update.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +321,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         btn_eliminar.setBorder(null);
         btn_eliminar.setBorderPainted(false);
         btn_eliminar.setContentAreaFilled(false);
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_eliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_press.png"))); // NOI18N
         btn_eliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_roll.png"))); // NOI18N
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -329,6 +334,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         btn_nuevo.setBorder(null);
         btn_nuevo.setBorderPainted(false);
         btn_nuevo.setContentAreaFilled(false);
+        btn_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_nuevo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_press.png"))); // NOI18N
         btn_nuevo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_roll.png"))); // NOI18N
         btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -339,6 +345,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/excel48px.png"))); // NOI18N
         jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -346,7 +353,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         });
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Buscar Codigo");
+        jLabel8.setText("Buscar Nombre");
 
         txtbuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -356,6 +363,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Actualizar tabla");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -377,14 +385,14 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                         .addComponent(btn_guardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_update)
@@ -443,6 +451,7 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
 
                 prodao.RegistrarProducto(prod);
                 Limpiar();
+                nuevo();
                 ListarProducto();
 
             }
@@ -513,7 +522,12 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
 
                 prodao.Actualizar(prod);
                 Limpiar();
+                nuevo();
                 ListarProducto();
+
+                btn_guardar.setEnabled(true);
+                btn_eliminar.setEnabled(false);
+                btn_update.setEnabled(false);
 
             }
 
@@ -540,6 +554,11 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
                 prodao.Eliminar(id);
                 Limpiar();
                 ListarProducto();
+                nuevo();
+
+                btn_guardar.setEnabled(true);
+                btn_eliminar.setEnabled(false);
+                btn_update.setEnabled(false);
 
             }
         }
@@ -548,19 +567,38 @@ public class VentanaProducto extends javax.swing.JInternalFrame {
 
     private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
         nuevo();
+        Limpiar();
+        ListarProducto();
+
+        if (!btn_guardar.isEnabled()) {
+
+            btn_guardar.setEnabled(true);
+            btn_eliminar.setEnabled(false);
+            btn_update.setEnabled(false);
+
+        }
+
     }//GEN-LAST:event_btn_nuevoActionPerformed
 
     private void tbl_porductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_porductosMouseClicked
 
-        int fila = tbl_porductos.rowAtPoint(evt.getPoint());
+        if (evt.getClickCount() == 2) {
 
-        lbl_id.setText(tbl_porductos.getValueAt(fila, 0).toString());
-        txt_codigo.setText(tbl_porductos.getValueAt(fila, 1).toString());
-        txt_nombre.setText(tbl_porductos.getValueAt(fila, 2).toString());
-        combo_proveedor.setSelectedItem(tbl_porductos.getValueAt(fila, 3).toString());
-        txt_stock.setText(tbl_porductos.getValueAt(fila, 4).toString());
-        temp_aux = tbl_porductos.getValueAt(fila, 4).toString();
-        txt_precio.setText(tbl_porductos.getValueAt(fila, 5).toString());
+            int fila = tbl_porductos.rowAtPoint(evt.getPoint());
+
+            lbl_id.setText(tbl_porductos.getValueAt(fila, 0).toString());
+            txt_codigo.setText(tbl_porductos.getValueAt(fila, 1).toString());
+            txt_nombre.setText(tbl_porductos.getValueAt(fila, 2).toString());
+            combo_proveedor.setSelectedItem(tbl_porductos.getValueAt(fila, 3).toString());
+            txt_stock.setText(tbl_porductos.getValueAt(fila, 4).toString());
+            temp_aux = tbl_porductos.getValueAt(fila, 4).toString();
+            txt_precio.setText(tbl_porductos.getValueAt(fila, 5).toString());
+
+            btn_guardar.setEnabled(false);
+            btn_eliminar.setEnabled(true);
+            btn_update.setEnabled(true);
+
+        }
 
     }//GEN-LAST:event_tbl_porductosMouseClicked
 
@@ -651,6 +689,7 @@ private void nuevo() {
         combo_proveedor.setSelectedIndex(0);
         txt_stock.setText("");
         txt_precio.setText("");
+        txtbuscar.setText("");
 
     }
 }

@@ -55,6 +55,7 @@ public class VentanaAyuda extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/help32px.png"))); // NOI18N
 
         FbLink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/fb64px.png"))); // NOI18N
+        FbLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         FbLink.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FbLinkMouseClicked(evt);
@@ -62,6 +63,7 @@ public class VentanaAyuda extends javax.swing.JInternalFrame {
         });
 
         Walink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/wp48px.png"))); // NOI18N
+        Walink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Walink.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WalinkMouseClicked(evt);
@@ -79,6 +81,7 @@ public class VentanaAyuda extends javax.swing.JInternalFrame {
         lbllinkwa.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         lbllinkwa.setForeground(new java.awt.Color(236, 243, 158));
         lbllinkwa.setText("contacto");
+        lbllinkwa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbllinkwa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbllinkwaMouseClicked(evt);

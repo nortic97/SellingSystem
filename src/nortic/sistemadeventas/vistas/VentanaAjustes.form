@@ -49,10 +49,10 @@
               <EmptySpace pref="19" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton2" alignment="1" max="32767" attributes="0"/>
                   <Component id="lbl_info" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -206,6 +206,9 @@
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
         <Property name="opaque" type="boolean" value="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/nortic/sistemadeventas/images/Guardar/save_press.png"/>
@@ -231,6 +234,9 @@
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
         <Property name="opaque" type="boolean" value="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/nortic/sistemadeventas/images/Comprobar/comprobar_press.png"/>

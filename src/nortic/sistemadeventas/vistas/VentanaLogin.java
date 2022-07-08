@@ -136,6 +136,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         btn_ingresar.setBorder(null);
         btn_ingresar.setBorderPainted(false);
         btn_ingresar.setContentAreaFilled(false);
+        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ingresar.setFocusPainted(false);
         btn_ingresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Comprobar/comprobar_press.png"))); // NOI18N
         btn_ingresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Comprobar/comprobar_roll.png"))); // NOI18N

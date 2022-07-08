@@ -314,6 +314,7 @@ public class VentanaCliente extends javax.swing.JInternalFrame {
         btn_nuevo.setBorder(null);
         btn_nuevo.setBorderPainted(false);
         btn_nuevo.setContentAreaFilled(false);
+        btn_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_nuevo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_press.png"))); // NOI18N
         btn_nuevo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_roll.png"))); // NOI18N
         btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -327,6 +328,7 @@ public class VentanaCliente extends javax.swing.JInternalFrame {
         btn_eliminar.setBorder(null);
         btn_eliminar.setBorderPainted(false);
         btn_eliminar.setContentAreaFilled(false);
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_eliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_press.png"))); // NOI18N
         btn_eliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_roll.png"))); // NOI18N
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -340,6 +342,7 @@ public class VentanaCliente extends javax.swing.JInternalFrame {
         btn_actualizar.setBorder(null);
         btn_actualizar.setBorderPainted(false);
         btn_actualizar.setContentAreaFilled(false);
+        btn_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_actualizar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_actualizar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -353,6 +356,7 @@ public class VentanaCliente extends javax.swing.JInternalFrame {
         btn_guardar.setBorder(null);
         btn_guardar.setBorderPainted(false);
         btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_press.png"))); // NOI18N
         btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_roll.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -474,7 +478,7 @@ public class VentanaCliente extends javax.swing.JInternalFrame {
         nuevo();
         Limpiar();
         ListarCliente();
-
+        
     }//GEN-LAST:event_btn_nuevoActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed

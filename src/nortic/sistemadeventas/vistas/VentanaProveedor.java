@@ -1,4 +1,3 @@
-
 package nortic.sistemadeventas.vistas;
 
 import nortic.sistemadeventas.modelos.Pais;
@@ -13,37 +12,38 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-
 public class VentanaProveedor extends javax.swing.JInternalFrame {
 
     ProveedorDAO pdao = new ProveedorDAO();
     Proveedor pr = new Proveedor();
     DefaultTableModel modelo = new DefaultTableModel();
     TableRowSorter trs = null;
-    
+
     public VentanaProveedor() {
         initComponents();
+        btn_update.setEnabled(false);
+        btn_eliminar.setEnabled(false);
         listarProveedor();
         ArrayList<String> lista = new ArrayList<>();
         lista = Pais.combo();
-        for(int i=0 ; i < lista.size(); i++){
-            
+        for (int i = 0; i < lista.size(); i++) {
+
             paisc.addItem(lista.get(i));
-            
+
         }
-        
+
     }
-    
-    public void listarProveedor(){
-        
+
+    public void listarProveedor() {
+
         List<Proveedor> lpr = new ProveedorDAO().listar();
-        
+
         modelo = (DefaultTableModel) tbl_proveedor.getModel();
-        
+
         Object[] ob = new Object[6];
-        
-        for(int i = 0 ; i < lpr.size() ; i++){
-            
+
+        for (int i = 0; i < lpr.size(); i++) {
+
             ob[0] = lpr.get(i).getId();
             ob[1] = lpr.get(i).getRut_cc();
             ob[2] = lpr.get(i).getNombre();
@@ -51,21 +51,20 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
             ob[4] = lpr.get(i).getDireccion();
             ob[5] = lpr.get(i).getCorreo();
             modelo.addRow(ob);
-            
+
         }
         tbl_proveedor.setModel(modelo);
     }
-    
-    private void Limpiar(){
-          
-          for(int i=0 ; i<modelo.getRowCount();i++){
-              modelo.removeRow(i);
-              i = i-1;
-          }
-          
-      }
 
-    
+    private void Limpiar() {
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -260,6 +259,7 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
         btn_nuevo.setBorder(null);
         btn_nuevo.setBorderPainted(false);
         btn_nuevo.setContentAreaFilled(false);
+        btn_nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_nuevo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_press.png"))); // NOI18N
         btn_nuevo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Limpiar/limpiar_roll.png"))); // NOI18N
         btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +272,7 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
         btn_eliminar.setBorder(null);
         btn_eliminar.setBorderPainted(false);
         btn_eliminar.setContentAreaFilled(false);
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_eliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_press.png"))); // NOI18N
         btn_eliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Eliminar/eliminar_roll.png"))); // NOI18N
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -284,6 +285,7 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
         btn_update.setBorder(null);
         btn_update.setBorderPainted(false);
         btn_update.setContentAreaFilled(false);
+        btn_update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_update.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_press.png"))); // NOI18N
         btn_update.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Actualizar/upd_roll.png"))); // NOI18N
         btn_update.addActionListener(new java.awt.event.ActionListener() {
@@ -296,6 +298,7 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
         btn_guardar.setBorder(null);
         btn_guardar.setBorderPainted(false);
         btn_guardar.setContentAreaFilled(false);
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_press.png"))); // NOI18N
         btn_guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nortic/sistemadeventas/images/Guardar/save_roll.png"))); // NOI18N
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -369,142 +372,167 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-        
+
         String cod = paisc.getSelectedItem().toString();
-        
-        if("".equals(txt_cc_rut.getText()) || "".equals(txt_nombre.getText()) || "".equals(txt_direccion.getText()) || "".equals(txt_telefono.getText())){
-            
-            JOptionPane.showMessageDialog(null, "Los campos con * son obligatorios","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
-            
-        }else{
-            
-           if("PAIS".equals(cod)){
-               
-               cod = "";
-               
-           }
-            
-           pr.setRut_cc(txt_cc_rut.getText());
-           pr.setNombre(txt_nombre.getText());
-           pr.setTelefono(cod+txt_telefono.getText());
-           pr.setDireccion(txt_direccion.getText());
-           pr.setCorreo(txt_correo.getText());
-            
-           int option = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar el registro","ADVERTENCIA",JOptionPane.YES_NO_OPTION);
-            
-           if(option == JOptionPane.YES_OPTION){
-                  
-               pdao.RegistrarProveedor(pr);
-               Limpiar();
-               listarProveedor();
-               
+
+        if ("".equals(txt_cc_rut.getText()) || "".equals(txt_nombre.getText()) || "".equals(txt_direccion.getText()) || "".equals(txt_telefono.getText())) {
+
+            JOptionPane.showMessageDialog(null, "Los campos con * son obligatorios", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            if ("PAIS".equals(cod)) {
+
+                cod = "";
+
             }
-             
-            
+
+            pr.setRut_cc(txt_cc_rut.getText());
+            pr.setNombre(txt_nombre.getText());
+            pr.setTelefono(cod + txt_telefono.getText());
+            pr.setDireccion(txt_direccion.getText());
+            pr.setCorreo(txt_correo.getText());
+
+            int option = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar el registro", "ADVERTENCIA", JOptionPane.YES_NO_OPTION);
+
+            if (option == JOptionPane.YES_OPTION) {
+
+                pdao.RegistrarProveedor(pr);
+                Limpiar();
+                nuevo();
+                listarProveedor();
+
+            }
+
         }
-        
-        
+
+
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void tbl_proveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_proveedorMouseClicked
-        
-        int fila = tbl_proveedor.rowAtPoint(evt.getPoint());
-        
-        lbl_id.setText(tbl_proveedor.getValueAt(fila, 0).toString());
-        txt_cc_rut.setText(tbl_proveedor.getValueAt(fila, 1).toString());
-        txt_nombre.setText(tbl_proveedor.getValueAt(fila, 2).toString());
-        txt_telefono.setText(tbl_proveedor.getValueAt(fila, 3).toString());
-        txt_direccion.setText(tbl_proveedor.getValueAt(fila, 4).toString());
-        txt_correo.setText(tbl_proveedor.getValueAt(fila, 5).toString());
-        
+
+        if (evt.getClickCount() == 2) {
+
+            int fila = tbl_proveedor.rowAtPoint(evt.getPoint());
+
+            lbl_id.setText(tbl_proveedor.getValueAt(fila, 0).toString());
+            txt_cc_rut.setText(tbl_proveedor.getValueAt(fila, 1).toString());
+            txt_nombre.setText(tbl_proveedor.getValueAt(fila, 2).toString());
+            txt_telefono.setText(tbl_proveedor.getValueAt(fila, 3).toString());
+            txt_direccion.setText(tbl_proveedor.getValueAt(fila, 4).toString());
+            txt_correo.setText(tbl_proveedor.getValueAt(fila, 5).toString());
+
+            btn_guardar.setEnabled(false);
+            btn_eliminar.setEnabled(true);
+            btn_update.setEnabled(true);
+
+        }
+
     }//GEN-LAST:event_tbl_proveedorMouseClicked
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
-        
+
         String cod = paisc.getSelectedItem().toString();
-        
-        if("".equals(lbl_id.getText())){
-            
-            JOptionPane.showMessageDialog(null, "Seleccione un registro","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
-             
-        }else{
-            
-            if("PAIS".equals(cod)){
-                
+
+        if ("".equals(lbl_id.getText())) {
+
+            JOptionPane.showMessageDialog(null, "Seleccione un registro", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            if ("PAIS".equals(cod)) {
+
                 cod = "";
-                
-                } 
-            
+
+            }
+
             pr.setRut_cc(txt_cc_rut.getText());
             pr.setNombre(txt_nombre.getText());
-            pr.setTelefono(cod+""+txt_telefono.getText());
+            pr.setTelefono(cod + "" + txt_telefono.getText());
             pr.setDireccion(txt_direccion.getText());
             pr.setCorreo(txt_correo.getText());
-            pr.setId(Integer.parseInt(lbl_id.getText())); 
-            
-            if(!"".equals(txt_cc_rut.getText()) && !"".equals(txt_nombre.getText()) && !"".equals(txt_direccion.getText()) && !"".equals(txt_telefono.getText())){
-                 
-                int opcion = JOptionPane.showConfirmDialog(this, "Esta seguro de ACTUALIZAR el registro","ADVERTENCIA",JOptionPane.YES_NO_OPTION);
-            
-                if(opcion == JOptionPane.YES_OPTION){
-                    
+            pr.setId(Integer.parseInt(lbl_id.getText()));
+
+            if (!"".equals(txt_cc_rut.getText()) && !"".equals(txt_nombre.getText()) && !"".equals(txt_direccion.getText()) && !"".equals(txt_telefono.getText())) {
+
+                int opcion = JOptionPane.showConfirmDialog(this, "Esta seguro de ACTUALIZAR el registro", "ADVERTENCIA", JOptionPane.YES_NO_OPTION);
+
+                if (opcion == JOptionPane.YES_OPTION) {
+
                     pdao.actualizar(pr);
                     Limpiar();
+                    nuevo();
                     listarProveedor();
-                
+
+                    btn_guardar.setEnabled(true);
+                    btn_update.setEnabled(false);
+                    btn_eliminar.setEnabled(false);
+
                 }
-            }else{
-                
-                JOptionPane.showMessageDialog(this, "Los campos con * son obligatorios","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
-            
+            } else {
+
+                JOptionPane.showMessageDialog(this, "Los campos con * son obligatorios", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+
             }
-            
+
         }
     }//GEN-LAST:event_btn_updateActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
-        
+
         String vacio = lbl_id.getText();
-        
-        if("".equals(vacio)){
-            
-            JOptionPane.showMessageDialog(null, "No ha seleccionado un registro","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
-                  
-       }else{
-    
-            int respuesta = JOptionPane.showConfirmDialog(null, "Esta seguro de elimnar el registro?","ADVERTENCIA",JOptionPane.YES_NO_OPTION);
-            
-            if(respuesta == JOptionPane.YES_OPTION){
-               
+
+        if ("".equals(vacio)) {
+
+            JOptionPane.showMessageDialog(null, "No ha seleccionado un registro", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            int respuesta = JOptionPane.showConfirmDialog(null, "Esta seguro de elimnar el registro?", "ADVERTENCIA", JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+
                 int id = Integer.parseInt(lbl_id.getText());
                 pdao.eliminar(id);
                 Limpiar();
+                nuevo();
                 listarProveedor();
-            
+
+                btn_guardar.setEnabled(true);
+                btn_update.setEnabled(false);
+                btn_eliminar.setEnabled(false);
+
+            }
         }
-        }
-        
+
     }//GEN-LAST:event_btn_eliminarActionPerformed
 
     private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
         nuevo();
+        Limpiar();
+        listarProveedor();
+        if (!btn_guardar.isEnabled()) {
+            btn_guardar.setEnabled(true);
+            btn_eliminar.setEnabled(false);
+            btn_update.setEnabled(false);
+        }
     }//GEN-LAST:event_btn_nuevoActionPerformed
 
     private void txtfiltroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfiltroKeyTyped
-        
+
         txtfiltro.addKeyListener(new KeyAdapter() {
-            
+
             @Override
             public void keyReleased(KeyEvent ke) {
-                
+
                 trs.setRowFilter(RowFilter.regexFilter(txtfiltro.getText(), 2));
-                
+
             }
         });
-        
+
         trs = new TableRowSorter(modelo);
         tbl_proveedor.setRowSorter(trs);
-        
+
     }//GEN-LAST:event_txtfiltroKeyTyped
 
 
@@ -534,16 +562,17 @@ public class VentanaProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_telefono;
     private javax.swing.JTextField txtfiltro;
     // End of variables declaration//GEN-END:variables
-private void nuevo(){
-    
-    lbl_id.setText("");
-    txt_cc_rut.setText("");
-    txt_nombre.setText("");
-    txt_direccion.setText("");
-    txt_correo.setText("");
-    txt_telefono.setText("");
-    paisc.setSelectedIndex(0);
-    
-}
+private void nuevo() {
+
+        lbl_id.setText("");
+        txt_cc_rut.setText("");
+        txt_nombre.setText("");
+        txt_direccion.setText("");
+        txt_correo.setText("");
+        txt_telefono.setText("");
+        txtfiltro.setText("");
+        paisc.setSelectedIndex(0);
+
+    }
 
 }

@@ -90,6 +90,7 @@ public class VentanaActualizacionesInventario extends javax.swing.JInternalFrame
         jLabel1.setText("Buscar fecha:");
 
         jButton1.setText("Refrescar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -97,6 +98,7 @@ public class VentanaActualizacionesInventario extends javax.swing.JInternalFrame
         });
 
         jButton2.setText("Buscar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
