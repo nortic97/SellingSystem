@@ -311,7 +311,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        VentanaNuevaVenta nv = new VentanaNuevaVenta();
+        String vendedor = lbl_vendedor.getText();
+        VentanaNuevaVenta nv = new VentanaNuevaVenta(vendedor);
         CentrarVentana(nv);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
